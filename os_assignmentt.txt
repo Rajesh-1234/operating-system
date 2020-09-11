@@ -1,0 +1,644 @@
+Assignment No:1
+
+1]  a.
+~$ pwd
+/home/user
+~$ ls
+Assign1.term
+~$ date
+Mon Sep  7 17:17:15 UTC 2020
+~$ date --date="Sept 7 2020 13:12:10"
+Mon Sep  7 13:12:10 UTC 2020
+~$ date --date="next mon"
+Mon Sep 14 00:00:00 UTC 2020
+~$ date --date="next sun"
+Sun Sep 13 00:00:00 UTC 2020
+~$ date --date=@5
+Thu Jan  1 00:00:05 UTC 1970
+~$ date --date='3 seconds ago'
+Mon Sep  7 17:23:08 UTC 2020
+~$ date
+Mon Sep  7 17:24:13 UTC 2020
+~$ date -s "Sun May 20 21:00:00 PDT 2013"
+date: cannot set date: Operation not permitted
+Tue May 21 04:00:00 UTC 2013
+~$ date
+Mon Sep  7 17:24:52 UTC 2020
+~$ ^C
+~$ date -s "Tue sept 08 21:00:00 PDT 2020"
+date: cannot set date: Operation not permitted
+Wed Sep  9 04:00:00 UTC 2020
+~$ date
+Mon Sep  7 17:26:19 UTC 2020
+~$ date -u
+Mon Sep  7 17:26:43 UTC 2020
+~$ date
+Mon Sep  7 17:26:59 UTC 2020
+~$ date -utc
+date: invalid option -- 't'
+Try 'date --help' for more information.
+~$ date+%a
+bash: date+%a: command not found
+~$ date +%a
+Mon
+~$ date +%A
+Monday
+~$ date +%F
+2020-09-07
+~$ date +%H
+17
+~$ date +%I
+05
+~$ date +%j
+251
+~$ date +%m
+09
+~$ date +%M
+34
+~$ date +%S
+30
+~$ date +%N
+758633374
+~$ date +%T
+17:34:59
+~$ date +%u
+1
+~$ date +%U
+36
+
+b.
+cal
+   September 2020     
+Su Mo Tu We Th Fr Sa  
+       1  2  3  4  5  
+ 6  7  8  9 10 11 12  
+13 14 15 16 17 18 19  
+20 21 22 23 24 25 26  
+27 28 29 30           
+                      
+~$ cal 6 1997
+     June 1997        
+Su Mo Tu We Th Fr Sa  
+ 1  2  3  4  5  6  7  
+ 8  9 10 11 12 13 14  
+15 16 17 18 19 20 21  
+22 23 24 25 26 27 28  
+29 30                 
+                      
+~$ cal -y
+                            2020
+      January               February               March          
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+          1  2  3  4                     1   1  2  3  4  5  6  7  
+ 5  6  7  8  9 10 11   2  3  4  5  6  7  8   8  9 10 11 12 13 14  
+12 13 14 15 16 17 18   9 10 11 12 13 14 15  15 16 17 18 19 20 21  
+19 20 21 22 23 24 25  16 17 18 19 20 21 22  22 23 24 25 26 27 28  
+26 27 28 29 30 31     23 24 25 26 27 28 29  29 30 31              
+                                                                  
+
+       April                  May                   June          
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+          1  2  3  4                  1  2      1  2  3  4  5  6  
+ 5  6  7  8  9 10 11   3  4  5  6  7  8  9   7  8  9 10 11 12 13  
+12 13 14 15 16 17 18  10 11 12 13 14 15 16  14 15 16 17 18 19 20  
+19 20 21 22 23 24 25  17 18 19 20 21 22 23  21 22 23 24 25 26 27  
+26 27 28 29 30        24 25 26 27 28 29 30  28 29 30              
+                      31                                          
+
+        July                 August              September        
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+          1  2  3  4                     1         1  2  3  4  5  
+ 5  6  7  8  9 10 11   2  3  4  5  6  7  8   6  7  8  9 10 11 12  
+12 13 14 15 16 17 18   9 10 11 12 13 14 15  13 14 15 16 17 18 19  
+19 20 21 22 23 24 25  16 17 18 19 20 21 22  20 21 22 23 24 25 26  
+26 27 28 29 30 31     23 24 25 26 27 28 29  27 28 29 30           
+                      30 31                                       
+
+      October               November              December        
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+             1  2  3   1  2  3  4  5  6  7         1  2  3  4  5  
+ 4  5  6  7  8  9 10   8  9 10 11 12 13 14   6  7  8  9 10 11 12  
+11 12 13 14 15 16 17  15 16 17 18 19 20 21  13 14 15 16 17 18 19  
+18 19 20 21 22 23 24  22 23 24 25 26 27 28  20 21 22 23 24 25 26  
+25 26 27 28 29 30 31  29 30                 27 28 29 30 31        
+                                                                  
+~$ cal -w
+Usage: cal [general options] [-jy] [[month] year]
+       cal [general options] [-j] [-m month] [year]
+       ncal -C [general options] [-jy] [[month] year]
+       ncal -C [general options] [-j] [-m month] [year]
+       ncal [general options] [-bhJjpwySM] [-H yyyy-mm-dd] [-s country_code] [[month] year]
+       ncal [general options] [-bhJeoSM] [year]
+General options: [-31] [-A months] [-B months] [-d yyyy-mm]
+~$ ncal -w
+    September 2020    
+Su     6 13 20 27   
+Mo     7 14 21 28   
+Tu  1  8 15 22 29   
+We  2  9 16 23 30   
+Th  3 10 17 24      
+Fr  4 11 18 25      
+Sa  5 12 19 26      
+   36 37 38 39 40   
+~$ cal -m2
+   February 2020      
+Su Mo Tu We Th Fr Sa  
+                   1  
+ 2  3  4  5  6  7  8  
+ 9 10 11 12 13 14 15  
+16 17 18 19 20 21 22  
+23 24 25 26 27 28 29  
+                      
+~$ 
+~$ cal -3
+    August 2020          September 2020         October 2020      
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+                   1         1  2  3  4  5               1  2  3  
+ 2  3  4  5  6  7  8   6  7  8  9 10 11 12   4  5  6  7  8  9 10  
+ 9 10 11 12 13 14 15  13 14 15 16 17 18 19  11 12 13 14 15 16 17  
+16 17 18 19 20 21 22  20 21 22 23 24 25 26  18 19 20 21 22 23 24  
+23 24 25 26 27 28 29  27 28 29 30           25 26 27 28 29 30 31  
+30 31                                                             
+~$ 
+~$ 
+~$ cal -j
+      September 2020         
+ Su  Mo  Tu  We  Th  Fr  Sa  
+        245 246 247 248 249  
+250 251 252 253 254 255 256  
+257 258 259 260 261 262 263  
+264 265 266 267 268 269 270  
+271 272 273 274              
+                             
+~$ 
+~$ cal -o
+Usage: cal [general options] [-jy] [[month] year]
+       cal [general options] [-j] [-m month] [year]
+       ncal -C [general options] [-jy] [[month] year]
+       ncal -C [general options] [-j] [-m month] [year]
+       ncal [general options] [-bhJjpwySM] [-H yyyy-mm-dd] [-s country_code] [[month] year]
+       ncal [general options] [-bhJeoSM] [year]
+General options: [-31] [-A months] [-B months] [-d yyyy-mm]
+~$ ncal -o
+04/19/20
+~$ 
+~$ 
+~$ cal -A2
+   September 2020         October 2020         November 2020      
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+       1  2  3  4  5               1  2  3   1  2  3  4  5  6  7  
+ 6  7  8  9 10 11 12   4  5  6  7  8  9 10   8  9 10 11 12 13 14  
+13 14 15 16 17 18 19  11 12 13 14 15 16 17  15 16 17 18 19 20 21  
+20 21 22 23 24 25 26  18 19 20 21 22 23 24  22 23 24 25 26 27 28  
+27 28 29 30           25 26 27 28 29 30 31  29 30                 
+                                                                  
+~$ 
+~$ 
+~$ cal -A3
+   September 2020         October 2020         November 2020      
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+       1  2  3  4  5               1  2  3   1  2  3  4  5  6  7  
+ 6  7  8  9 10 11 12   4  5  6  7  8  9 10   8  9 10 11 12 13 14  
+13 14 15 16 17 18 19  11 12 13 14 15 16 17  15 16 17 18 19 20 21  
+20 21 22 23 24 25 26  18 19 20 21 22 23 24  22 23 24 25 26 27 28  
+27 28 29 30           25 26 27 28 29 30 31  29 30                 
+                                                                  
+
+   December 2020      
+Su Mo Tu We Th Fr Sa  
+       1  2  3  4  5  
+ 6  7  8  9 10 11 12  
+13 14 15 16 17 18 19  
+20 21 22 23 24 25 26  
+27 28 29 30 31        
+                      
+~$ 
+~$ 
+~$ cal -B2
+                            2020
+        July                 August              September        
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+          1  2  3  4                     1         1  2  3  4  5  
+ 5  6  7  8  9 10 11   2  3  4  5  6  7  8   6  7  8  9 10 11 12  
+12 13 14 15 16 17 18   9 10 11 12 13 14 15  13 14 15 16 17 18 19  
+19 20 21 22 23 24 25  16 17 18 19 20 21 22  20 21 22 23 24 25 26  
+26 27 28 29 30 31     23 24 25 26 27 28 29  27 28 29 30           
+                      30 31                                       
+~$
+
+c.
+~$ echo "var=10;var" | bc
+10
+~$ 
+~$ echo "var=10;var" | bc
+10
+~$ 
+~$ echo "var=10;var^=2;var" | bc
+100
+~$ 
+~$ x=`echo "var=500;var%=7;var" | bc`
+~$ echo $x
+3
+~$ 
+~$ $ echo "var=10;var++" | bc
+bash: $: command not found
+~$ echo "var=10;var++" | bc
+10
+~$ 
+~$ echo "var=10;--var" | bc
+9
+~$ 
+~$ echo "10>5" | bc
+1
+~$ echo "0 || 0" | bc
+0
+
+d.
+~$ 
+~$ echo x=10
+x=10
+~$ 
+~$ echo Helloo
+Helloo
+~$ 
+~$ 
+~$ echo The value of variable x = $x
+The value of variable x =
+~$ 
+~$ echo x=10
+x=10
+~$ 
+~$ echo The value of variable x = $x
+The value of variable x =
+~$ x=10
+~$ echo The value of variable x = $x
+The value of variable x = 10
+~$ 
+~$ 
+~$ echo -e "raj \natul\nsanu\nsnehal \nmanu \nyogesh \nvaibhav"
+raj
+atul 
+sanu
+snehal
+manu
+yogesh
+vaibhav
+~$ 
+~$ echo -e "Tecmint \tis \ta \tcommunity \tof \tLinux \tNerds"
+Tecmint         is      a       community       of      Linux   Nerds
+~$ 
+~$ echo -e "\n\tTecmint \n\tis \n\ta \n\tcommunity \n\tof \n\tLinux \n\tNerds" 
+
+        Tecmint 
+        is 
+        a 
+        community 
+        of 
+        Linux 
+        Nerds
+~$ 
+~$ echo -e "Rajeshh \vmanu \vatul \vsnehal \vsanu "
+Rajeshh
+        manu 
+                 atul
+                           snehal
+                                         sanu 
+                                   
+~$ 
+~$ echo -e "\n\vTecmint \n\vis \n\va \n\vcommunity \n\vof \n\vLinux \n\vNerds" 
+
+
+Tecmint 
+
+is 
+
+a 
+
+community 
+
+of 
+
+Linux 
+
+Nerds
+~$ 
+~$ echo -e "Tecmint \ris a community of Linux Nerds"
+is a community of Linux Nerds
+~$ 
+~$ ~$ 
+~$ echo *
+1.term
+~$ 
+~$
+
+e.
+~$ who
+~$ who -H
+NAME     LINE         TIME             COMMENT
+~$ 
+~$ who -q
+
+# users=0
+~$ 
+~$ who -m
+~$ 
+~$ who -T
+~$ 
+~$ who -b
+~$ 
+~$ who -d
+~$ who -p
+~$ 
+~$ who -a
+~$ 
+~$ man who
+WHO(1)                                                                        User Commands                                                                        WHO(1)
+
+NAME
+       who - show who is logged on
+
+SYNOPSIS
+       who [OPTION]... [ FILE | ARG1 ARG2 ]
+
+DESCRIPTION
+       Print information about users who are currently logged in.
+
+       -a, --all
+              same as -b -d --login -p -r -t -T -u
+
+       -b, --boot
+              time of last system boot
+
+       -d, --dead
+              print dead processes
+
+       -H, --heading
+              print line of column headings
+
+       --ips  print ips instead of hostnames. with --lookup, canonicalizes based on stored IP, if available, rather than stored hostname
+
+       -l, --login
+              print system login processes
+
+f.
+$ 
+~$ whoami
+user
+~$ ~$ whoami --version
+whoami (GNU coreutils) 8.30
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Richard Mlynarik.
+~$
+
+g.
+~$ logname
+logname: no login name
+~$  logname --version
+logname (GNU coreutils) 8.30
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by FIXME: unknown.
+~$ 
+~$ logname --help
+Usage: logname [OPTION]
+Print the name of the current user.
+
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report logname translation bugs to <https://translationproject.org/team/>
+Full documentation at: <https://www.gnu.org/software/coreutils/logname>
+or available locally via: info '(coreutils) logname invocation'
+
+h.
+~$ uname -a
+Linux project-22575b78-a4df-4210-9a26-f17180bf8dbb 5.3.0-1030-gcp #32~18.04.1-Ubuntu SMP Thu Jun 25 19:30:23 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+~$ 
+~$ uname -s
+Linux
+~$ 
+~$ uname -n
+project-22575b78-a4df-4210-9a26-f17180bf8dbb
+~$ 
+~$ uname -r
+5.3.0-1030-gcp
+~$ 
+~$ uname -m
+x86_64
+~$ 
+~$ uname -p
+x86_64
+~$ 
+~$ uname -i
+x86_64
+~$ 
+~$ uname -v
+#32~18.04.1-Ubuntu SMP Thu Jun 25 19:30:23 UTC 2020
+~$ 
+~$ uname -o
+GNU/Linux
+
+i.
+~$ seq 5
+1
+2
+3
+4
+5
+~$ 
+~$ seq 4 8
+4
+5
+6
+7
+8
+~$ 
+~$ seq -s " " 10
+1 2 3 4 5 6 7 8 9 10
+~$ 
+~$ seq -w 10
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+~$ 
+~$ seq -w 99 120
+099
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+~$ 
+~$ 
+~$ seq -w 1 10 50
+01
+11
+21
+31
+41
+
+j.
+~$clear
+
+Ques 2]
+A.
+
+$ mkdir A B C
+~$ CD A
+bash: CD: command not found
+~$ cd A
+~/A$ touch A.txt B.txt C.txt
+~/A$ cd 
+~$ cd B
+~/B$ touch A.txt B.txt C.txt
+~/B$ cd
+~$ cd C
+~/C$ touch A.txt B.txt C.txt
+~/C$ cd
+~$ cp -r C A
+
+B.
+mv B C
+~$ 
+C.
+~$ alias RAJESH="LS-LH"
+~$ 
+D.
+~$ mv A CDA
+
+Ques 3]
+A.
+touch file1.txt file2.txt file3.txt file4.txt file5.txt
+~$ 
+~$ 
+~$ echo 'raj'>> file1.txt file2.txt file3.txt file4.txt file5.txt
+B.
+$ cat file1.txt file2.txt file3.txt file4.txt file5.txt
+deepufile2.txt file3.txt file4.txt file5.txt
+C.
+$ touch file1.txt file2.txt file3.txt file4.txt file5.txt
+D.
+$ rm -r C CDAC A
+
+Ques 4]
+A.
+vi testfile
+i to insert text 
+escape to leave insert
+:wq to exit
+cat testfile
+B. cat -n testfile
+C. tac testfile
+D. cat file1 file2 file3
+
+Ques 5]
+A. column filename.txt
+B. sort filename.txt
+     sort -r filename.txt
+C. mkdir .aa .bb .c.txt 
+      ls -a
+D. touch -a file1.txt file2.txt
+    ls -t 
+   ls -rt
+E. ls –r
+F. ls -l
+G. ls –ld
+
+
+1)
+$ mkdir rajesh
+~$ 
+~$ touch A.txt B.txt C.txt D.txt
+~$ 
+~$ chmod u-rwx rajesh
+a)  ~$ chmod u+rw- bar
+b)  ~$ chmod +r--
+c)  ~$  chmod +x
+
+2)chmod +x rajesh
+3)chmod -wx rajesh
+4)echo *rajesh	
+5)echo * /etc/
+6)find /etc -type f -name "*.conf"
+7)echo 'helloo' >> a.txt
+
+
+
+1)
+$ mkdir a
+~$ cd a
+~/a$ touch a.txt
+~/a$ touch .hidden.txt
+~/a$ 
+A.
+~/a$ mkdir b
+~/a$ cd b
+~/a/b$ touch b.txt
+~/a/b$ touch .hidden.txt
+B.
+~/a/b$ mkdir c
+~/a/b$ touch c.txt
+~/a/b$ touch .hidden.txt
+~/a/b$ 
+C.
+~/a/b$ cp -r c a
+ 
+~/a/b$ cp -r a/a.txt a/b
+D.
+~/a/b$ cd
+~$ cp -r a/a.txt a/b
+~$ 
+~$ cp -r a/c a/b
+
+2)
+~$chmod a=r c
+
+3)permission denied
+4)~$ mkdir data
+5) ~$ chmod +rw b
+6)~$ mkdir data2
+7)~$ touch data.txt
+8)~$ mv c copied_dir
+9)~$  chmod +x copied_dir
+10)~$ ls
+11)permission denied for hidden file,c.txt file
+12)~$ mv a/b/data/ a
+13)~$ sudo chmod
+14)~$ chmod o+rwx a
+15)~$ mkdir sample
+16)~$ mkdir x
+17)~$ mv  x a
+18)~$ mkdir movies
+21)~$ chmod a=rwx a
+25)~$ rm b.txt
