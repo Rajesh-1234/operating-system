@@ -1,0 +1,348 @@
+Assignment 2
+
+
+1. mkdir a1,a2,a3,a4,a5,a6,a7,a8,a9,a10
+2.
+i="y"
+a=0
+t=0
+while [ $i = "y" ]
+
+do
+clear
+echo "4.Compare 2 strings :"
+echo "3.Concatanet string"
+echo "1.Find length of string"
+echo "2.Copying string"
+echo "5.Reverse of string"
+echo "6.Exit"
+echo "Enter your choice"
+read ch
+case $ch in
+    4)echo "Enter first String"
+     read s1
+     echo "Enter second string "
+     read s2
+     if [ "$s1 = $s2" ]
+     then    
+        echo "Two strings are equal "
+        else
+        echo "Two strings are not equal"
+     fi;;
+    3)echo "Enter one string "
+      read s1
+     echo "Enter second string "
+     read s2
+     echo $s1 $s2;;
+    1)echo "Enter any String"
+     read s1
+     t=`echo $s1|wc -c`
+     t=`expr $t - 1`
+     echo "Length of "$s1" is "$t;;
+    2)echo "Enter first String"
+     read s1
+     echo "Enter second string "
+     read s2
+       s2=$s1
+    echo $s2
+    
+    5)echo "Enter any string :"
+      read s1
+       t=`echo $s1|wc -c`
+           t=`expr $t - 1`
+           echo "length "$t
+           while [ $t -ne 0 ]
+       do
+         temp=`echo $s1|cut -c $t`
+         echo $temp
+         temp2=`echo $temp2 $temp`
+         t=`expr $t - 1`
+      done
+      echo $temp2;;
+    
+    6)exit;;
+    *)echo "Invalid choice";;
+esac
+echo "Do u want to continue ?"
+read i
+if [ $i != "y" ]
+then
+    exit
+fi
+done
+
+3.
+for f in *.txt; do
+    mv -- "$f" "${f%.txt}.php"
+done
+
+4. echo $HOME, echo $HISTORY,  echo $LOGNAME, echo $PATH,  echo $TERM,  echo $SHELL
+
+5. ls -al | cut -c44-
+6. ls –al
+7. find -type f -name "*.sh" -size +5k –ls
+1.
+echo "enter a year"
+   
+ read YEAR
+
+if (( ($YEAR % 4) == 0 ))
+    
+then 
+        
+echo "Given Year Is Leap Year"
+    
+else
+       
+ echo "Given Year Is Not Leap Year"
+   
+fi
+
+2.
+A]
+echo "enter number between 1 to 7"
+ 
+ read num
+
+ 
+ if [[ $num -eq 1 ]]
+
+then 
+       
+echo "Sunday"  
+
+elif [[ $num -eq 2 ]]
+
+   
+then 
+     
+ echo "Monday"
+
+elif [[ $num -eq 3 ]]
+
+    then  
+echo "Tuesday"
+Elif [[ $num -eq 4 ]]
+
+then 
+      
+echo "Wednesday"
+     
+Elif [[ $num -eq 5]]
+
+  then 
+      
+echo "Thursday"
+      
+lif [[ $num -eq 6 ]]
+
+   
+then 
+      echo "Friday"
+      
+lif [[ $num -eq 7 ]]
+
+   
+then 
+      
+echo "saturday"
+  
+ fi
+
+
+B]
+echo "enter number between 1 to 7"
+
+read num
+case $num in
+1) echo "Sunday" ;;
+
+2) echo "Monday" ;;
+
+3) echo "Tuesday" ;;
+
+4) echo "Wednesday" ;;
+
+5) echo "Thursday" ;;
+
+6) echo "Friday" ;;
+
+7) echo "Saturday" ;;
+esac
+3.
+A]
+echo "enter 1st number"
+read num1
+
+echo "enter 2nd number"
+read num2
+
+echo "enter 3rd number"
+read num3
+
+if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
+then 
+echo " $num1 is greatest number"
+
+   elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]
+     
+then
+       
+echo " $num2 is greatest number"
+
+else
+      
+echo " $num3 is greatest number"
+
+fi
+
+B]
+echo "enter 1st number"
+read num1
+
+echo "enter 2nd number"
+read num2
+
+echo "enter 3rd number"
+read num3
+
+sum=`expr $num1 + $num2 + $num3`
+avg=`expr $sum / 3`
+echo "Sum = $sum"
+echo "Average = $avg"
+
+4.
+read number
+if [ $((number%2)) -eq 0 ]
+then
+  echo "Number is even."
+
+else
+  
+echo "Number is odd."
+fi
+
+
+5.
+cal -d 2013-09
+cal -d 2014-09
+cal -d 2015-09
+
+output:
+? bash main.sh
+   September 2015     
+Su Mo Tu We Th Fr Sa  
+       1  2  3  4  5  
+ 6  7  8  9 10 11 12  
+13 14 15 16 17 18 19  
+20 21 22 23 24 25 26  
+27 28 29 30           
+                      
+   September 2014     
+Su Mo Tu We Th Fr Sa  
+    1  2  3  4  5  6  
+ 7  8  9 10 11 12 13  
+14 15 16 17 18 19 20  
+21 22 23 24 25 26 27  
+28 29 30              
+                      
+   September 2015     
+Su Mo Tu We Th Fr Sa  
+       1  2  3  4  5  
+ 6  7  8  9 10 11 12  
+13 14 15 16 17 18 19  
+20 21 22 23 24 25 26  
+27 28 29 30           
+              
+
+6.
+A]
+let
+a=10
+b=20
+ sum=$(( $a + $b ))
+ echo $sum
+
+B]
+expr
+echo "Enter two numbers"
+read num1 num2
+sum = 'expr $num1 + $num2'
+echo "The sum is = $sum"
+C]
+echo 'scale=4;10+20' | bc
+7.
+
+N=10 
+a=0  
+b=1 
+
+echo "The Fibonacci series is : "
+
+for (( i=0; i<N; i++ )) 
+do
+  
+echo -n "$a "
+  
+fn=$((a + b)) 
+  
+a=$b 
+  
+b=$fn
+ 
+done
+
+8.
+echo "Prasanna "|rev
+
+9. a=Prassana
+len=${#a}
+for ((i=1;i<len;i++)); 
+do 
+a=$a${a: -i*2:1};
+done; 
+a=${a:len-1}
+echo $a
+10.
+echo "Enter the number"
+ read num
+echo "Reverse Number"
+echo $num | rev
+
+
+
+
+1)
+echo "Enter your password"
+read password
+len="${#password}"
+
+if test $len -ge 8 ; then
+    echo "$password" | grep -q [0-9]
+     if test $? -eq 0 ; then
+           echo "$password" | grep -q [A-Z]
+                if test $? -eq 0 ; then
+                    echo "$password" | grep -q [a-z]   
+                      if test $? -eq 0 ; then
+                       echo "Strong Password"
+                   else
+                       echo "Weak Password -> Should include a lower case letter."
+                   fi
+            else
+               echo "Weak Password -> Should include a capital case letter." 
+            fi
+     else
+       echo "Weak Password -> Should use numbers in your password."   
+     fi
+else
+    echo "Weak Password -> Password length should have at least 8 characters."
+fi
+
+O/P : 
+Enter your password
+Rajesh@02
+Strong Password
+
+Enter your password
+Nikita
+Weak Password -> Password length should have at least 8 characters.
